@@ -1,10 +1,10 @@
-$(document).ready(function () {
+$(document).ready(function() {
   var username = $('#username');
   var password = $('#password');
   var confirmPassword = $('#confirm_password');
   var submit = $('#submit');
 
-  $(username).keyup(function () {
+  $(username).keyup(function() {
     if ($(username).val().length > 3) {
       $('.span-user').hide();
     } else {
@@ -12,24 +12,23 @@ $(document).ready(function () {
     }
   });
 
-  $(password).keyup(function () {
+  $(password).keyup(function() {
     if ($(password).val().length > 6) {
       $('.span-usertwo').hide();
     } else {
       $('.span-usertwo').show();
     }
 
-    if ($(confirmPassword).val() != '') {
+    if ($(confirmPassword).val() !== '') {
       if ($(confirmPassword).val() === $(password).val()) {
         $('.span-userthree').hide();
       } else {
         $('.span-userthree').show();
       }
     }
-
   });
 
-  $(confirmPassword).keyup(function () {
+  $(confirmPassword).keyup(function() {
     if ($(confirmPassword).val() === $(password).val()) {
       $('.span-userthree').hide();
     } else {
@@ -40,5 +39,4 @@ $(document).ready(function () {
       $(submit).attr('disabled', false);
     }
   });
-
 });
